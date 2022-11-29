@@ -22,9 +22,9 @@ class CodewarsTest{
 
     @Test
     fun checkIfFunctionReturnsRangeNumbers(){
-        val expected = "1-3"
+        val expected = "7-11"
         val codewars = Codewars()
-        val tmp = intArrayOf(1,2,3)
+        val tmp = intArrayOf(7,8,9,10,11)
         val result = codewars.rangeExtraction(tmp)
         assertEquals(expected, result)
     }

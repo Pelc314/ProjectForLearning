@@ -1,5 +1,3 @@
-
-
 class Codewars() {
     fun rangeExtraction(arr: IntArray): String {
         var result = ""
@@ -10,6 +8,7 @@ class Codewars() {
 
             rangeList.add(arr[i])
         }
+        //TODO create a 2d array for range list where ranges will be in array<array>
 //        println(rangeList.joinToString { it.toString() } + "rangeList")
 //        println(individualList.joinToString { it.toString() } + "individualList")
 
