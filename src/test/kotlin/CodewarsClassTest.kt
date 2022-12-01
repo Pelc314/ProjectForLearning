@@ -25,6 +25,7 @@ class FabergeTest {
             0.toBigInteger(), codewarsFaberge.height(0.toBigInteger(), 14.toBigInteger())
         )
     }
+
     @Test
     fun testForZeroTries() {
         assertEquals(
@@ -63,19 +64,49 @@ class CodewarsTest {
     val codeWars = Codewars()
 
     @Test
-    fun testSubtractsSum(){
-        assertEquals("apple",codeWars.subtractSum(4991))
+    fun reverseSeqTest() {
+        assertEquals((listOf(5, 4, 3, 2, 1)), codeWars.reverseSeq(5))
     }
+
+    @Test
+    fun dutyFreeTest() {
+        assertEquals(357, codeWars.dutyFree(24, 35, 3000))
+        assertEquals(166, codeWars.dutyFree(12, 50, 1000))
+        assertEquals(294, codeWars.dutyFree(17, 10, 500))
+
+    }
+
+    @Test
+    fun centuryTest() {
+        assertEquals(1, codeWars.century(89));
+        assertEquals(18, codeWars.century(1705));
+        assertEquals(19, codeWars.century(1900));
+        assertEquals(17, codeWars.century(1601));
+        assertEquals(20, codeWars.century(2000));
+        assertEquals(1, codeWars.century(89));
+    }
+
+    @Test
+    fun growTest() {
+        assertEquals(6, codeWars.grow(intArrayOf(1, 2, 3)))
+    }
+
+    @Test
+    fun testSubtractsSum() {
+        assertEquals("apple", codeWars.subtractSum(4991))
+    }
+
     @Test
     fun testFixed() {
-         assertArrayEquals(intArrayOf(-1,-2,-3,-4,-5), codeWars.invert(intArrayOf(1,2,3,4,5)))
-        assertArrayEquals(intArrayOf(-1,2,-3,4,-5), codeWars.invert(intArrayOf(1,-2,3,-4,5)))
+        assertArrayEquals(intArrayOf(-1, -2, -3, -4, -5), codeWars.invert(intArrayOf(1, 2, 3, 4, 5)))
+        assertArrayEquals(intArrayOf(-1, 2, -3, 4, -5), codeWars.invert(intArrayOf(1, -2, 3, -4, 5)))
         assertArrayEquals(intArrayOf(), codeWars.invert(intArrayOf()))
         assertArrayEquals(intArrayOf(0), codeWars.invert(intArrayOf(0)))
     }
+
     @Test
-    fun checkFindEvenIndex(){
-        assertEquals(3,codeWars.findEvenIndex(intArrayOf(1, 2, 3, 4, 3, 2, 1)))
+    fun checkFindEvenIndex() {
+        assertEquals(3, codeWars.findEvenIndex(intArrayOf(1, 2, 3, 4, 3, 2, 1)))
     }
 
     @Test

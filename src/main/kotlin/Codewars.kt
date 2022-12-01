@@ -1,12 +1,60 @@
 import java.math.BigInteger
+import kotlin.math.floor
 
 class Codewars() {
+    public fun sum(mixed: List<Any>): Int {
+        var sum = 0
+        for (element in mixed){
+            sum += element.toString().toInt()
+        }
+        return sum
+    }
+    fun reverseSeq(n: Int): List<Int> {
+        val list = mutableListOf<Int>()
+        var lol = n
+        while (lol>0){
+        list.add(lol)
+            lol--
+        }
+        return list
+    }
+    fun feast(beast: String, dish: String) = beast[0] == dish[0] && beast[beast.length-1]== dish[dish.length-1]
+
+    fun dutyFree(normPrice: Int, discount: Int, hol: Int) = (hol.floorDiv(((normPrice * discount) / 100)))
+
+
+    fun century(var1: Int): Int {
+        val century = var1.toString()
+        var result = 0
+        if (century.length < 3) return 1
+        if (century[century.length - 1] == '0' && century[century.length - 2] == '0') {
+            return century.dropLast(2).toInt()
+        } else {
+            result = (century.dropLast(2).toInt())
+        }
+        result += 1
+        return result
+    }
+
+    fun abbrevName(name: String): String {
+        val initials: MutableList<String> = name.split(' ').toMutableList()
+        return initials[0].first().toUpperCase().toString() + "." + initials[1].first().toUpperCase().toString()
+    }
+
+    fun litres(time: Double) = floor(time / 2).toInt()
+    fun grow(arr: IntArray): Int {
+        var sum = 1
+        for (element in arr) {
+            sum *= element
+        }
+        return sum
+    }
 
     fun subtractSum(n: Int): String {
         var tmp = n.toString()
         var sum = 0
         var result = "err"
-        while (result=="err"){
+        while (result == "err") {
             for (element in tmp) {
                 sum += element.digitToInt()
             }
@@ -18,6 +66,7 @@ class Codewars() {
 
 
     fun invert(arr: IntArray): IntArray {
+
         val tmp = mutableListOf<Int>()
         for (i in arr.indices) {
             tmp.add(arr[i] * -1)
