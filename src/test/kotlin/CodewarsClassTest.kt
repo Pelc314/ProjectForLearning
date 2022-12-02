@@ -64,6 +64,17 @@ class CodewarsTest {
     val codeWars = Codewars()
 
     @Test
+    fun bigTest() {
+        assertEquals("£7.80",codeWars.londonCityHacker(arrayOf(12, "Central", "Circle", 21)));
+      //  assertEquals("!BCD!", codeWars.replace("ABCDE"))
+        assertEquals("left", codeWars.elevator(0, 1, 0))
+        assertEquals("right", codeWars.elevator(0, 1, 1))
+        assertEquals("right", codeWars.elevator(0, 1, 2))
+        assertEquals("right", codeWars.elevator(0, 0, 0))
+        assertEquals("right", codeWars.elevator(0, 2, 1))
+    }
+
+    @Test
     fun reverseSeqTest() {
         assertEquals((listOf(5, 4, 3, 2, 1)), codeWars.reverseSeq(5))
     }

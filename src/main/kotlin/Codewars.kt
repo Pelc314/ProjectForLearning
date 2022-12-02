@@ -2,23 +2,99 @@ import java.math.BigInteger
 import kotlin.math.floor
 
 class Codewars() {
-    public fun sum(mixed: List<Any>): Int {
+
+    fun londonCityHacker(journey: Array<Any>): String {
+        val buses:Double = journey.count{it is String}.toFloat() * 1.5
+        val tube = journey.count{it is Int} * 2.4
+        val sum = tube + buses
+        return "£"+sum+"0"
+    }
+    fun replace(s: String): String {
+        val ch = s.lowercase().toMutableList()
+        for (i in s.indices) {
+            if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i'
+                || s[i] == 'o' || s[i] == 'u'
+            ) {
+                ch[i] = '!'
+            }
+        }
+        var result = ""
+        for (i in ch.indices){
+            result+=ch[i]
+        }
+        return result
+    }
+
+
+    fun lol(args: Array<String>) {
+        var line = "This website is aw3som3."
+        var vowels = 0
+        var consonants = 0
+        var digits = 0
+        var spaces = 0
+
+        line = line.toLowerCase()
+        for (i in 0..line.length - 1) {
+            val ch = line[i]
+            if (ch == 'a' || ch == 'e' || ch == 'i'
+                || ch == 'o' || ch == 'u'
+            ) {
+                ++vowels
+            } else if (ch in 'a'..'z') {
+                ++consonants
+            } else if (ch in '0'..'9') {
+                ++digits
+            } else if (ch == ' ') {
+                ++spaces
+            }
+        }
+    }
+
+    fun elevator(left: Int, right: Int, call: Int): String {
+        println(call)
+        println((left - call))
+        println((right - call))
+        if (right == call || right == left) return "right"
+        if (left == call) return "left"
+        if ((left - call) > (right - call)) return "left" else return "right"
+    }
+
+    fun getAscii(c: Char): Int {
+        return c.toByte().toInt()
+    }
+
+    fun well(x: Array<String>): String {
+        var counter = 0
+        for (element in x) {
+            if (element == "good") counter++
+        }
+        if (counter > 2) {
+            return "I smell a series!"
+        } else if (counter > 0) return "Publish!"
+
+
+        return "Fail!"
+    }
+
+    public fun sum(mixed: List<Int>): Int {
         var sum = 0
-        for (element in mixed){
+        for (element in mixed) {
             sum += element.toString().toInt()
         }
-        return sum
+        return mixed.toList().minOf { it }
     }
+
     fun reverseSeq(n: Int): List<Int> {
         val list = mutableListOf<Int>()
         var lol = n
-        while (lol>0){
-        list.add(lol)
+        while (lol > 0) {
+            list.add(lol)
             lol--
         }
         return list
     }
-    fun feast(beast: String, dish: String) = beast[0] == dish[0] && beast[beast.length-1]== dish[dish.length-1]
+
+    fun feast(beast: String, dish: String) = beast[0] == dish[0] && beast[beast.length - 1] == dish[dish.length - 1]
 
     fun dutyFree(normPrice: Int, discount: Int, hol: Int) = (hol.floorDiv(((normPrice * discount) / 100)))
 
