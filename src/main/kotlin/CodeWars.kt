@@ -1,7 +1,35 @@
 import java.math.RoundingMode
+import kotlin.math.abs
 import kotlin.math.ceil
 
-class Codewars() {
+class CodeWars() {
+    fun gps(s: Int, x: DoubleArray): Int {
+        var sections = mutableListOf<Double>()
+
+        for (i in 0 until x.size - 1) {
+            val tmp = abs((3600 * (x[i] - x[i + 1])) / s)
+            sections.add(tmp)
+        }
+        println(sections)
+        println(sections.average())
+        if (sections.isEmpty()) {
+            return 5
+        }
+        val result: Int = sections.maxOrNull()!!.toInt()
+        return result.toInt()
+    }
+
+    fun nbYear(pp0: Int, percent: Double, aug: Int, p: Int): Int {
+        var counter = 0
+        var population = pp0
+        while (population < p) {
+            population = (population + population * (percent / 100) + aug).toInt()
+            counter++
+            println(population)
+        }
+        return counter
+    }
+
     fun fizzBuzz(n: Int): Array<String> {
         val resultList = mutableListOf<String>()
         for (i in 0 until n) {
@@ -53,7 +81,6 @@ class Codewars() {
     }
 
     fun londonCityHacker(journey: Array<Any>): String {
-
         var buses = journey.count { it is Int }
         var buses2: Double = 0.0
         if (buses % 2 != 0 && buses > 2) {
@@ -66,6 +93,4 @@ class Codewars() {
         val sum = (tube + buses2).toBigDecimal().setScale(2, RoundingMode.UP)
         return "£" + sum.toDouble() + "0"
     }
-
 }
-
